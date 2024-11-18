@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ComplyX-inspired Coding Exercises Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+    <style>
+        body {
+            background-color: #1F1F2E;
+            color: #E0E0E3;
+            font-family: 'Arial', sans-serif;
+        }
+        .header {
+            padding: 20px;
+            border-bottom: 2px solid #39395B;
+            text-align: center;
+            background: linear-gradient(to right, #3E3E5A, #252539);
+        }
+        .container {
+            max-width: 1280px;
+            margin: 40px auto;
+        }
+        .card {
+            background-color: #2D2D40;
+            border-radius: 8px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .filters, .card {
+            margin-bottom: 20px;
+        }
+        .filters {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+        }
+        .filters button {
+            padding: 8px 16px;
+            border: none;
+            background-color: #3E3E5A;
+            color: #E0E0E3;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .filters button:hover {
+            background-color: #575778;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1 class="text-4xl font-bold">Coding Exercises Dashboard</h1>
+        <p class="text-sm mt-2">Track your progress through Python exercism exercises</p>
+    </header>
+
+    <div class="container">
+        <div class="filters">
+            <button id="all">All Exercises</button>
+            <button id="completed">Completed</button>
+            <button id="inProgress">In Progress</button>
+            <button id="notStarted">Not Started</button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="card">
+                <h2 class="text-2xl font-bold">Exercise 1: Hello World</h2>
+                <p class="mt-2">Introduction to Python, displaying a simple greeting message.</p>
+                <div class="mt-4">
+                    <button class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded">View Details</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2 class="text-2xl font-bold">Exercise 2: Sum of Numbers</h2>
+                <p class="mt-2">Write a program that calculates the sum of given numbers.</p>
+                <div class="mt-4">
+                    <button class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded">View Details</button>
+                </div>
+            </div>
+
+            <!-- Repeat similar cards for other exercises -->
+        </div>
+    </div>
+
+    <script>
+        const allBtn = document.getElementById('all');
+        const completedBtn = document.getElementById('completed');
+        const inProgressBtn = document.getElementById('inProgress');
+        const notStartedBtn = document.getElementById('notStarted');
+
+        allBtn.addEventListener('click', () => alert('Show all exercises'));
+        completedBtn.addEventListener('click', () => alert('Show completed exercises'));
+        inProgressBtn.addEventListener('click', () => alert('Show in-progress exercises'));
+        notStartedBtn.addEventListener('click', () => alert('Show not-started exercises'));
+    </script>
+</body>
+</html>
